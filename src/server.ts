@@ -7,7 +7,7 @@ import { convertMinutesToHourString } from './utils/convert-minutes-to-hour-stri
 
 const app = express()
 
-app.use(express.json)
+app.use(express.json())
 app.use(cors())
 
 const prisma = new PrismaClient({
@@ -45,7 +45,7 @@ app.post('/games/:id/ads', async (request, response) => {
     }
   })
 
-  return response.status(201).json(gameId)
+  return response.status(201).json(ad)
 })
 
 app.get('/games/:id/ads', async (request, response) => {
